@@ -33,7 +33,7 @@ Partial Class AutoBlaze
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TimeChooser = New System.Windows.Forms.ComboBox()
+        Me.AMPMChooser = New System.Windows.Forms.ComboBox()
         Me.ABSuper = New System.Windows.Forms.RadioButton()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
@@ -41,6 +41,7 @@ Partial Class AutoBlaze
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BlazeTimer = New System.Windows.Forms.Timer(Me.components)
         Me.TickChooser = New System.Windows.Forms.ComboBox()
+        Me.TimeChooser = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -133,8 +134,9 @@ Partial Class AutoBlaze
         'Panel1
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.TickChooser)
         Me.Panel1.Controls.Add(Me.TimeChooser)
+        Me.Panel1.Controls.Add(Me.TickChooser)
+        Me.Panel1.Controls.Add(Me.AMPMChooser)
         Me.Panel1.Controls.Add(Me.ABSuper)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.ABEvery)
@@ -145,17 +147,17 @@ Partial Class AutoBlaze
         Me.Panel1.Size = New System.Drawing.Size(162, 118)
         Me.Panel1.TabIndex = 2
         '
-        'TimeChooser
+        'AMPMChooser
         '
-        Me.TimeChooser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.AMPMChooser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TimeChooser.FormattingEnabled = True
-        Me.TimeChooser.Items.AddRange(New Object() {"4:20 PM", "4:20 AM"})
-        Me.TimeChooser.Location = New System.Drawing.Point(93, 41)
-        Me.TimeChooser.Name = "TimeChooser"
-        Me.TimeChooser.Size = New System.Drawing.Size(66, 21)
-        Me.TimeChooser.TabIndex = 11
-        Me.TimeChooser.Text = "4:20 PM"
+        Me.AMPMChooser.FormattingEnabled = True
+        Me.AMPMChooser.Items.AddRange(New Object() {"AM", "PM"})
+        Me.AMPMChooser.Location = New System.Drawing.Point(118, 41)
+        Me.AMPMChooser.Name = "AMPMChooser"
+        Me.AMPMChooser.Size = New System.Drawing.Size(41, 21)
+        Me.AMPMChooser.TabIndex = 11
+        Me.AMPMChooser.Text = "PM"
         '
         'ABSuper
         '
@@ -212,6 +214,14 @@ Partial Class AutoBlaze
         Me.TickChooser.TabIndex = 12
         Me.TickChooser.Text = "5"
         '
+        'TimeChooser
+        '
+        Me.TimeChooser.Location = New System.Drawing.Point(72, 42)
+        Me.TimeChooser.Name = "TimeChooser"
+        Me.TimeChooser.Size = New System.Drawing.Size(40, 20)
+        Me.TimeChooser.TabIndex = 13
+        Me.TimeChooser.Text = "4:20"
+        '
         'AutoBlaze
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -246,6 +256,7 @@ Partial Class AutoBlaze
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BlazeTimer As Timer
-    Friend WithEvents TimeChooser As ComboBox
+    Friend WithEvents AMPMChooser As ComboBox
     Friend WithEvents TickChooser As ComboBox
+    Friend WithEvents TimeChooser As TextBox
 End Class
