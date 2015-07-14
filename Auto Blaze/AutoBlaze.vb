@@ -24,12 +24,15 @@
         LoadBar.Increment(LoadBar.Maximum / 60)
     End Sub
 
+
     Private Sub BlazeTimer_Tick(sender As Object, e As EventArgs) Handles BlazeTimer.Tick
         Times += 1
-        LoadBar.Value = Times * LoadBar.Maximum / 5
+        If TickChooser.Text > 0 Then
+            LoadBar.Value = Times * LoadBar.Maximum / TickChooser.Text
+        End If
 
-        If Times = 5 Then
-            If ABTimed.Checked And (DateAndTime.Now.ToShortTimeString = "4:20 PM") Then
+        If Times >= TickChooser.Text Then
+            If ABTimed.Checked And (DateAndTime.Now.ToShortTimeString = TimeChooser.Text) Then
                 Me.Blaze()
             ElseIf ABEvery.Checked
                 Me.Blaze()
