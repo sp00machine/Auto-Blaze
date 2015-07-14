@@ -26,9 +26,6 @@
 
     Private Sub BlazeTimer_Tick(sender As Object, e As EventArgs) Handles BlazeTimer.Tick
         Times += 1
-        If TickChooser.Text > 0 Then
-            LoadBar.Value = Times * LoadBar.Maximum / TickChooser.Text
-        End If
 
         If Times >= TickChooser.Text Then
             If ABTimed.Checked And (DateAndTime.Now.ToShortTimeString = TimeChooser.Text + " " + AMPMChooser.Text) Then
@@ -39,7 +36,10 @@
 
             Times = 0
             LoadBar.Value = LoadBar.Minimum
+        End If
 
+        If TickChooser.Text > 0 Then
+            LoadBar.Value = Times * LoadBar.Maximum / TickChooser.Text
         End If
     End Sub
 
@@ -64,4 +64,11 @@
         ShowInTaskbar = True
         NotifyIcon1.Visible = False
     End Sub
+
+    Private Sub ReplaceEmpty(sender As Object, e As EventArgs) Handles TickChooser.TextChanged
+        If TickChooser.Text = "" Then
+            TickChooser.Text = 0
+        End If
+    End Sub
+
 End Class

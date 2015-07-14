@@ -33,6 +33,8 @@ Partial Class AutoBlaze
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TimeChooser = New System.Windows.Forms.TextBox()
+        Me.TickChooser = New System.Windows.Forms.ComboBox()
         Me.AMPMChooser = New System.Windows.Forms.ComboBox()
         Me.ABSuper = New System.Windows.Forms.RadioButton()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
@@ -40,8 +42,6 @@ Partial Class AutoBlaze
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BlazeTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.TickChooser = New System.Windows.Forms.ComboBox()
-        Me.TimeChooser = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -147,6 +147,28 @@ Partial Class AutoBlaze
         Me.Panel1.Size = New System.Drawing.Size(162, 118)
         Me.Panel1.TabIndex = 2
         '
+        'TimeChooser
+        '
+        Me.TimeChooser.Location = New System.Drawing.Point(72, 42)
+        Me.TimeChooser.Name = "TimeChooser"
+        Me.TimeChooser.Size = New System.Drawing.Size(40, 20)
+        Me.TimeChooser.TabIndex = 13
+        Me.TimeChooser.Text = "4:20"
+        '
+        'TickChooser
+        '
+        Me.TickChooser.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TickChooser.AutoCompleteCustomSource.AddRange(New String() {"5", "10", "15", "30", "45", "60", "120"})
+        Me.TickChooser.FormattingEnabled = True
+        Me.TickChooser.Items.AddRange(New Object() {"5", "10", "15", "30", "45", "60"})
+        Me.TickChooser.Location = New System.Drawing.Point(93, 62)
+        Me.TickChooser.Name = "TickChooser"
+        Me.TickChooser.Size = New System.Drawing.Size(66, 21)
+        Me.TickChooser.TabIndex = 12
+        Me.TickChooser.Text = "5"
+        '
         'AMPMChooser
         '
         Me.AMPMChooser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -154,6 +176,7 @@ Partial Class AutoBlaze
         Me.AMPMChooser.FormattingEnabled = True
         Me.AMPMChooser.Items.AddRange(New Object() {"AM", "PM"})
         Me.AMPMChooser.Location = New System.Drawing.Point(118, 41)
+        Me.AMPMChooser.MaxLength = 2
         Me.AMPMChooser.Name = "AMPMChooser"
         Me.AMPMChooser.Size = New System.Drawing.Size(41, 21)
         Me.AMPMChooser.TabIndex = 11
@@ -199,28 +222,6 @@ Partial Class AutoBlaze
         '
         Me.BlazeTimer.Enabled = True
         Me.BlazeTimer.Interval = 1000
-        '
-        'TickChooser
-        '
-        Me.TickChooser.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TickChooser.AutoCompleteCustomSource.AddRange(New String() {"5", "10", "15", "30", "45", "60", "120"})
-        Me.TickChooser.FormattingEnabled = True
-        Me.TickChooser.Items.AddRange(New Object() {"5", "10", "15", "30", "45", "60"})
-        Me.TickChooser.Location = New System.Drawing.Point(93, 62)
-        Me.TickChooser.Name = "TickChooser"
-        Me.TickChooser.Size = New System.Drawing.Size(66, 21)
-        Me.TickChooser.TabIndex = 12
-        Me.TickChooser.Text = "5"
-        '
-        'TimeChooser
-        '
-        Me.TimeChooser.Location = New System.Drawing.Point(72, 42)
-        Me.TimeChooser.Name = "TimeChooser"
-        Me.TimeChooser.Size = New System.Drawing.Size(40, 20)
-        Me.TimeChooser.TabIndex = 13
-        Me.TimeChooser.Text = "4:20"
         '
         'AutoBlaze
         '
