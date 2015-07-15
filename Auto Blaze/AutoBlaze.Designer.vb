@@ -30,18 +30,17 @@ Partial Class AutoBlaze
         Me.ABEvery = New System.Windows.Forms.RadioButton()
         Me.ABTimed = New System.Windows.Forms.RadioButton()
         Me.ABOff = New System.Windows.Forms.RadioButton()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TimeChooser = New System.Windows.Forms.TextBox()
         Me.TickChooser = New System.Windows.Forms.ComboBox()
         Me.AMPMChooser = New System.Windows.Forms.ComboBox()
         Me.ABSuper = New System.Windows.Forms.RadioButton()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BlazeTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -70,7 +69,7 @@ Partial Class AutoBlaze
         Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 1)
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 9
@@ -80,7 +79,7 @@ Partial Class AutoBlaze
         '
         Me.ABEvery.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ABEvery.AutoSize = True
-        Me.ABEvery.Location = New System.Drawing.Point(6, 62)
+        Me.ABEvery.Location = New System.Drawing.Point(3, 62)
         Me.ABEvery.Name = "ABEvery"
         Me.ABEvery.Size = New System.Drawing.Size(81, 17)
         Me.ABEvery.TabIndex = 8
@@ -92,7 +91,7 @@ Partial Class AutoBlaze
         Me.ABTimed.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ABTimed.AutoSize = True
-        Me.ABTimed.Location = New System.Drawing.Point(6, 41)
+        Me.ABTimed.Location = New System.Drawing.Point(3, 39)
         Me.ABTimed.Name = "ABTimed"
         Me.ABTimed.Size = New System.Drawing.Size(63, 17)
         Me.ABTimed.TabIndex = 7
@@ -105,17 +104,13 @@ Partial Class AutoBlaze
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ABOff.AutoSize = True
         Me.ABOff.Checked = True
-        Me.ABOff.Location = New System.Drawing.Point(6, 17)
+        Me.ABOff.Location = New System.Drawing.Point(3, 16)
         Me.ABOff.Name = "ABOff"
         Me.ABOff.Size = New System.Drawing.Size(90, 17)
         Me.ABOff.TabIndex = 6
         Me.ABOff.TabStop = True
         Me.ABOff.Text = "AutoBlaze Off"
         Me.ABOff.UseVisualStyleBackColor = True
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 60000
         '
         'Panel2
         '
@@ -149,7 +144,7 @@ Partial Class AutoBlaze
         '
         'TimeChooser
         '
-        Me.TimeChooser.Location = New System.Drawing.Point(72, 42)
+        Me.TimeChooser.Location = New System.Drawing.Point(72, 39)
         Me.TimeChooser.Name = "TimeChooser"
         Me.TimeChooser.Size = New System.Drawing.Size(40, 20)
         Me.TimeChooser.TabIndex = 13
@@ -175,7 +170,7 @@ Partial Class AutoBlaze
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AMPMChooser.FormattingEnabled = True
         Me.AMPMChooser.Items.AddRange(New Object() {"AM", "PM"})
-        Me.AMPMChooser.Location = New System.Drawing.Point(118, 41)
+        Me.AMPMChooser.Location = New System.Drawing.Point(118, 39)
         Me.AMPMChooser.MaxLength = 2
         Me.AMPMChooser.Name = "AMPMChooser"
         Me.AMPMChooser.Size = New System.Drawing.Size(41, 21)
@@ -187,17 +182,13 @@ Partial Class AutoBlaze
         Me.ABSuper.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ABSuper.AutoSize = True
-        Me.ABSuper.Location = New System.Drawing.Point(6, 85)
+        Me.ABSuper.Location = New System.Drawing.Point(3, 85)
         Me.ABSuper.Name = "ABSuper"
         Me.ABSuper.Size = New System.Drawing.Size(82, 17)
         Me.ABSuper.TabIndex = 10
         Me.ABSuper.TabStop = True
         Me.ABSuper.Text = "Super Blaze"
         Me.ABSuper.UseVisualStyleBackColor = True
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 1000
         '
         'NotifyIcon1
         '
@@ -223,11 +214,21 @@ Partial Class AutoBlaze
         Me.BlazeTimer.Enabled = True
         Me.BlazeTimer.Interval = 1000
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(199, 181)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'AutoBlaze
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(335, 261)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LoadBar)
         Me.Controls.Add(Me.BlazeButton)
@@ -248,11 +249,9 @@ Partial Class AutoBlaze
     Friend WithEvents ABEvery As RadioButton
     Friend WithEvents ABTimed As RadioButton
     Friend WithEvents ABOff As RadioButton
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ABSuper As RadioButton
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
@@ -260,4 +259,5 @@ Partial Class AutoBlaze
     Friend WithEvents AMPMChooser As ComboBox
     Friend WithEvents TickChooser As ComboBox
     Friend WithEvents TimeChooser As TextBox
+    Friend WithEvents Button1 As Button
 End Class
