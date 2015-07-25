@@ -30,7 +30,6 @@ Partial Class AutoBlaze
         Me.ABEvery = New System.Windows.Forms.RadioButton()
         Me.ABTimed = New System.Windows.Forms.RadioButton()
         Me.ABOff = New System.Windows.Forms.RadioButton()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TimeChooser = New System.Windows.Forms.TextBox()
         Me.TickChooser = New System.Windows.Forms.ComboBox()
@@ -40,9 +39,11 @@ Partial Class AutoBlaze
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BlazeTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BlazeButton
@@ -111,20 +112,6 @@ Partial Class AutoBlaze
         Me.ABOff.TabStop = True
         Me.ABOff.Text = "AutoBlaze Off"
         Me.ABOff.UseVisualStyleBackColor = True
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.AutoSize = True
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel2.Location = New System.Drawing.Point(12, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(158, 145)
-        Me.Panel2.TabIndex = 10
         '
         'Panel1
         '
@@ -214,32 +201,35 @@ Partial Class AutoBlaze
         Me.BlazeTimer.Enabled = True
         Me.BlazeTimer.Interval = 1000
         '
-        'Button1
+        'PictureBox1
         '
-        Me.Button1.Location = New System.Drawing.Point(199, 181)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BackgroundImage = Global.Auto_Blaze.My.Resources.Resources.snoop_dogg
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(157, 117)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'AutoBlaze
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(335, 261)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LoadBar)
         Me.Controls.Add(Me.BlazeButton)
-        Me.Controls.Add(Me.Panel2)
         Me.Name = "AutoBlaze"
         Me.Text = "AutoBlaze"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -249,7 +239,6 @@ Partial Class AutoBlaze
     Friend WithEvents ABEvery As RadioButton
     Friend WithEvents ABTimed As RadioButton
     Friend WithEvents ABOff As RadioButton
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ABSuper As RadioButton
     Friend WithEvents NotifyIcon1 As NotifyIcon
@@ -259,5 +248,6 @@ Partial Class AutoBlaze
     Friend WithEvents AMPMChooser As ComboBox
     Friend WithEvents TickChooser As ComboBox
     Friend WithEvents TimeChooser As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
